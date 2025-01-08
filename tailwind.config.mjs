@@ -7,10 +7,10 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      fontFamily: {
+				island: ['island'],
+				playfair: ['playfair'],
+			}
     },
   },
   plugins: [],

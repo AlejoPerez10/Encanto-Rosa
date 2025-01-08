@@ -8,15 +8,16 @@ const Details = () => {
 
     const router = useRouter();
     const { name } = router.query;
-    const product = products.find((item) => item.name.toLowerCase().trim() === name?.toLowerCase().trim());
+    console.log('Name: ', name)
+    const product = products.find((item) => item?.name.toLowerCase().trim() === name?.toLowerCase().trim());
     
     if (!product) return <p className='h-screen text-7xl m-auto'>Producto no encontrado</p>;
     
     return (
-        <main className=' w-full px-6 pb-10 -mb-[24px]'>
-            <h1 className="relative ps-10 pt-32 mb-10 flex font-island text-6xl text-wrap leading-[45px]">
+        <main className='w-full px-6 pb-10 -mb-[24px]'>
+            <h1 className="relative ps-10 pt-32 mb-10 flex text-center font-island text-6xl text-wrap leading-[50px]" style={{whiteSpace:'pre-line'}}>
                 <a className="absolute left-[-50px] top-28" href="/"><Left className="stroke-[#f173bd] size-20" style={{strokeWidth:2}}/> </a>
-                {product?.name}
+                {product?.reference}
             </h1>
             <section className="flex flex-col items-center gap-5">
                 <figure className="w-full flex flex-col items-center">

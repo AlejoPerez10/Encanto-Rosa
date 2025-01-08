@@ -1,7 +1,7 @@
 import { React } from 'react'
 import { useRouter } from 'next/router'
 import { products } from '@/data/productos'
-import Left from '@/assets/icons/leftdetails.svg'
+import Left from '@/assets/icons/leftDetails.svg'
 import Check from '@/assets/icons/check.svg';
 
 const Details = () => {

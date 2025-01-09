@@ -5,6 +5,8 @@ const Cards = ({ currentPage, setTotalProducts, setCurrentPage}) => {
     const itemsPerPage = 8;
     const startIndex = (currentPage - 1) * itemsPerPage;
 
+    const [searchValue, setSearchValue] = useState(''); // Estado para manejar el valor del input
+
     const [filteredProducts, setFilteredProducts] = useState(products);
 
     useEffect(() => {

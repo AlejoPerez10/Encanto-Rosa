@@ -11,7 +11,11 @@ const Details = () => {
     console.log('Name: ', name)
     const product = products.find((item) => item?.name.toLowerCase().trim() === name?.toLowerCase().trim());
     
-    if (!product) return <p className='h-screen text-7xl m-auto'>Producto no encontrado</p>;
+    if (!product) return (
+        <div className='h-screen flex justify-center items-center'>
+            <p className='text-6xl font-bold font-island text-[#9b005b] m-auto'>Cargando...</p>
+        </div>
+    )
     
     return (
         <main className='w-full px-6 pb-10 -mb-[24px]'>

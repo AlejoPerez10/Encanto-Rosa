@@ -16,17 +16,17 @@ const Details = () => {
     return (
         <main className='w-full px-6 pb-10 -mb-[24px]'>
             <h1 className="relative ps-10 pt-32 mb-10 flex text-center font-island text-6xl text-wrap leading-[50px]" style={{whiteSpace:'pre-line'}}>
-                <a className="absolute left-[-50px] top-28" href="/"><Left className="stroke-[#f173bd] size-20" style={{strokeWidth:2}}/> </a>
+                <a className="absolute left-[-50px] top-28" href="/"><Left className="stroke-[#9b005b] size-20" style={{strokeWidth:2}}/> </a>
                 {product?.reference}
             </h1>
             <section className="flex flex-col items-center gap-5">
                 <figure className="w-full flex flex-col items-center">
-                    <h2 className="font-island text-4xl font-bold leading-5 mt-4 mb-4">Alias: {product?.alias}</h2>
+                    <h2 className="font-island text-4xl font-bold leading-6 mt-4 mb-4 text-[#9b005b]">Alias: {product?.alias}</h2>
                     <img src={product?.img} alt={product?.name} className="sectionCards my-4 w-auto rounded-md flex flex-col items-center font-island text-lg"/>
                 </figure>
                 <aside className="flex flex-col w-full">
                     <h3 className="font-island text-3xl mx-auto font-bold -mt-4 mb-3">{product?.price}</h3>
-                    <div id="carrito" className="w-full h-[40px] bg-[#EEAED3] mb-2 rounded-full font-island text-4xl text-white flex justify-center items-center shadow-[-2px_4px_15px_black]">Agregar al Carrito</div>
+                    <a href='https://wa.me/3103893622' className="w-full h-[40px] bg-[#EEAED3] mb-2 rounded-full font-island font-bold text-4xl text-[#9b005b] flex justify-center items-center shadow-[-2px_4px_15px_black]">¡ LO QUIERO !</a>
                     <p className="relative w-full text-wrap font-playfair leading-4 mt-5 text-lg">{product?.description}</p>
                 </aside>
             </section>

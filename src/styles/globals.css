@@ -31,14 +31,12 @@ input[type="search"]::-webkit-search-cancel-button {
 
 li{
   cursor: pointer;
+  width: 150px;
   padding: 1px 10px;
   margin-bottom: 10px;
-  border-radius: 100px;
-  box-shadow: inset 0 0 5px #9b005b;
-}
-
-#bottomIcon{
-  box-shadow: inset 0 5px 15px #9b005b;
+  border-radius: 10px;
+  background: #9b005b;
+  box-shadow: inset 0 0 5px black;
 }
 
 #divDetras{

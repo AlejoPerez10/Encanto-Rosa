@@ -19,14 +19,14 @@ export default function Home() {
 
   return (
     <main className="w-full h-auto pt-[93px] px-3 -mb-[24px] flex flex-col justify-center items-center">
-        <div className="box relative w-[185px] h-[30px] bg-[#EEAED3] mx-auto mt-5 mb-8 rounded-full flex justify-center items-center text-white font-island text-3xl shadow-[-2px_4px_15px_black]">
-            <Left className='me-4 m-2' style={{strokeWidth:4}} onClick={(e) => {e.preventDefault(); handlePrevPage()}}/>
+        <div className="box relative w-[200px] h-[35px] bg-[#EEAED3] mx-auto mt-5 mb-8 rounded-full flex justify-center items-center text-white font-island text-3xl shadow-[-2px_4px_15px_black]">
+            <Left className='me-5 m-2' style={{strokeWidth:4}} onClick={(e) => {e.preventDefault(); handlePrevPage()}}/>
             <span className="me-3 font-semibold">{currentPage}</span>
             <span className="me-3 font-bold">DE</span>
             <span className="font-bold">{totalPages}</span>
-            <Right className='ms-4 m-2' style={{strokeWidth:4}} onClick={(e) => {e.preventDefault(); handleNextPage()}}/>
+            <Right className='ms-5 m-2' style={{strokeWidth:4}} onClick={(e) => {e.preventDefault(); handleNextPage()}}/>
         </div>
-        <Cards currentPage={currentPage} setTotalProducts={setTotalProducts}/>
+        <Cards currentPage={currentPage} setTotalProducts={setTotalProducts} setCurrentPage={setCurrentPage}/>
     </main>
   );
 }

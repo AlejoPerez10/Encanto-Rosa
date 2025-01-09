@@ -2,7 +2,6 @@ import React from 'react'
 import Search from '@/assets/icons/search.svg'
 import Menu from '@/assets/icons/menu.svg'
 import X from '@/assets/icons/x.svg'
-import Right from '@/assets/icons/right.svg'
 
 const Header = () => {
     const openMenu = () => {
@@ -24,12 +23,10 @@ const Header = () => {
         div?.classList.add('hidden');
     };
 
-    const scrollDown = () => {
-        const nav = document.getElementById('navToScroll');
-        nav?.scrollBy({
-            top: nav.scrollHeight,
-            behavior: 'smooth'
-        });
+    const nameSidebar = (name) => {
+        const input = document.getElementById('search')
+        input.value = name;
+        closeMenu();
     };
 
     return (
@@ -49,32 +46,20 @@ const Header = () => {
             <div id="divDetras" className="hidden" onClick={closeMenu}></div>
             <aside id="menu" className="hidden fixed h-screen w-auto right-0 top-0 bg-[#EEAED3] z-50 shadow-[-30px_0_60px_black]">
                 <nav>
-                    <ul id="navToScroll" className="p-3 list-none font-island text-3xl text-white max-h-[calc(100vh-50px)] overflow-auto overflow-x-hidden">
+                    <ul id="navToScroll" className="flex flex-col items-center p-3 list-none font-island text-3xl text-white max-h-[calc(100vh-100px)] overflow-auto overflow-x-hidden">
                         <div className="flex">
                             <h1 className="relative top-3 text-5xl">Productos</h1>
                             <X id="x" className="relative left-2 mt-[10px] mb-5 ms-auto size-12" style={{strokeWidth:3}} onClick={closeMenu} />
                         </div>
-                        <li>Bases</li>
-                        <li>Correctores</li>
-                        <li>Polvos</li>
-                        <li>Rubores</li>
-                        <li>Iluminadores</li>
-                        <li>Sombras</li>
-                        <li>Delineadores</li>
-                        <li>Labiales</li>
-                        <li>Brillos</li>
-                        <li>Fijadores</li>
-                        <li>Brochas</li>
-                        <li>Aceites</li>
-                        <li>Kits</li>
-                        <li>Pestañinas</li>
-                        <li>Brochas</li>
-                        <li>Aceites</li>
-                        <li>Kits</li>
-                        <li>Pestañinas</li>
-                        <div id="bottomIcon" className="absolute bottom-0 right-0 w-full h-[50px]" onClick={scrollDown}>
-                            <Right className="relative mx-auto top-3 rotate-90" style={{ strokeWidth:5}} />
-                        </div>
+                        <li onClick={() => nameSidebar('rubor')}>Rubores</li>
+                        <li onClick={() => nameSidebar('polvo')}>Polvos</li>
+                        <li onClick={() => nameSidebar('base')}>Bases</li>
+                        <li onClick={() => nameSidebar('corrector')}>Correctores</li>
+                        <li onClick={() => nameSidebar('gel')}>Gel</li>
+                        <li onClick={() => nameSidebar('lápiz')}>Lápices</li>
+                        <li onClick={() => nameSidebar('kit')}>Kits</li>
+                        <li onClick={() => nameSidebar('fijador')}>Fijadores</li>
+                        <li onClick={() => nameSidebar('serum')}>Serum</li>
                     </ul>
                 </nav>
             </aside>

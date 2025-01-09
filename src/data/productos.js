@@ -1,5 +1,4 @@
 export const products = [
-    
     {
         price: '$25.000',
         img: '/images/ruborLiquido.webp',
@@ -64,9 +63,9 @@ export const products = [
     {
         price: '$38.000',
         img: '/images/sticksCremosos.webp',
-        name: 'Stick Atenea',
-        reference: 'Sticks Cremosos Atenea',
-        alias: 'El Stick Atenea de tu vida',
+        name: 'Rubor en Barra',
+        reference: 'Rubor en Barra Cremoso Atenea',
+        alias: 'El rubor Atenea de tu vida',
         description: 'Tienen textura cremosa, con fácil difuminación y de alta pigmentación por lo que te recomendamos ir construyendo la tonalidad que deseas.',
         check1: 'Textura cremosa y fácil de difuminar: Se aplica suavemente, proporcionando un acabado natural y uniforme.',
         check2: 'Alta pigmentación: Permite construir la intensidad del color según tus preferencias, ideal para un maquillaje personalizado.'

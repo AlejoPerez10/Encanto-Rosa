@@ -18,7 +18,7 @@ const Footer = () => {
             <Star className='absolute size-[6px] top-[75px] right-32'/>
             <Star className='absolute size-[6px] top-[58px] right-10'/>
 
-            <img src="/images/logotipo.webp" alt="logotipo de Encanto Rosa" className='w-44 z-50'/>
+            <img src="/images/Logotipo.webp" alt="logotipo de Encanto Rosa" className='w-44 z-50'/>
             <img className='absolute left-[-12px] top-2 w-36' src="/images/nube2.webp" alt="nube"/>
             <img className='absolute right-0 top-[68px] w-36' src="/images/nubeFooter.webp" alt="nube"/>
             <aside className="relative flex h-[95px] gap-1">

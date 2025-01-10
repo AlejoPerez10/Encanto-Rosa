@@ -20,7 +20,7 @@ const Details = () => {
     return (
         <main className='w-full px-6 pb-10 -mb-[24px]'>
             <h1 className="relative ps-10 pt-32 mb-10 flex text-center font-island text-6xl text-wrap leading-[50px]" style={{whiteSpace:'pre-line'}}>
-                <a className="absolute left-[-50px] top-28" href="/"><Left className="stroke-[#9b005b] size-20" style={{strokeWidth:2}}/> </a>
+                <a className="absolute left-[-30px] top-[125px]" href="/"><Left className="stroke-[#9b005b] size-14" style={{strokeWidth:2}}/> </a>
                 {product?.reference}
             </h1>
             <section className="flex flex-col items-center gap-5">

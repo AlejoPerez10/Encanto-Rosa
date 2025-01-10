@@ -50,6 +50,18 @@ li{
   z-index: 50;
 }
 
+.hiddenn {
+  opacity: 0;
+  transform: translateX(100%); /* Mueve el menú fuera de la pantalla */
+  pointer-events: none; /* Evita interacciones cuando está oculto */
+}
+
+.visiblee {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto; /* Habilita interacciones */
+}
+
 .sectionCards{
   background: white;
   background-image:

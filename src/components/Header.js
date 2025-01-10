@@ -60,17 +60,17 @@ const closeMenu = () => {
             <Star className='absolute size-[6px] top-3 left-2'/>
             <Star className='absolute size-[6px] top-1 left-14'/>
             <Star className='absolute size-[6px] top-4 left-[105px]'/>
-            <Star className='absolute size-[6px] top-3 left-[245px]'/>
-            <Star className='absolute size-[6px] top-1 left-[295px]'/>
-            <Star className='absolute size-[6px] top-10 left-[312.5px]'/>
-            <Star className='absolute size-[6px] top-2 left-[360px]'/>
+            <Star className='absolute size-[6px] top-3 right-32'/>
+            <Star className='absolute size-[6px] top-1 right-20'/>
+            <Star className='absolute size-[6px] top-10 right-14'/>
+            <Star className='absolute size-[6px] top-2 right-2'/>
             <Star className='absolute size-[6px] top-[82px] left-4'/>
             <Star className='absolute size-[6px] top-[70px] left-[85px]'/>
             <Star className='absolute size-[6px] top-[75px] left-[145px]'/>
-            <Star className='absolute size-[6px] top-[80px] left-[230px]'/>
+            <Star className='absolute size-[6px] top-[80px] right-36'/>
             <a href="/"><img src="/images/Logo.webp" alt="logo de encanto rosa" className="w-[93px]" /></a>
             <img className='absolute left-28 top-2 w-36' src="/images/nube.webp" alt="nube"/>
-            <img className='absolute left-64 top-[68px] w-36' src="/images/nube2.webp" alt="nube"/>
+            <img className='absolute right-[-30px] top-[68px] w-36' src="/images/nube2.webp" alt="nube"/>
             <div className="relative">
                 <input
                     id="search"

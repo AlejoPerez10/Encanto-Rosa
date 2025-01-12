@@ -39,6 +39,12 @@ li{
   box-shadow: inset 0 0 5px black;
 }
 
+@media (min-width: 1024px){
+  li{
+    width: 250px !important;
+  }
+}
+
 #divDetras{
   position: fixed;
   top: 0;

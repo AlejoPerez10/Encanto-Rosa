@@ -7,6 +7,7 @@ import Wpp from '@/assets/icons/wpp.svg'
 import Face from '@/assets/icons/face.svg'
 import Tik from '@/assets/icons/tik.svg'
 import Star from '@/assets/icons/star.svg'
+import { useSearch } from '@/context/SearchContext'
 
 const starsSmall = [
     { top: '12px', left: '8px' },
@@ -77,6 +78,35 @@ const starsLarge = [
 
 const Header = () => {
 
+    const { setGetInput, getInput } = useSearch();
+
+    const handleCategoryClick = (category) => {
+        const input = document.getElementById('search');
+        input.value = category;
+        setGetInput(category.toLowerCase().trim()); // Actualiza el estado global
+        closeMenu();
+    };
+
+    useEffect(() => {
+        const input = document.getElementById('search');
+        const x = document.getElementById('x');
+        
+        if(input.value === ''){
+            x.classList.add('hidden')
+        } else {
+            x.classList.remove('hidden')
+        }
+    },[getInput])
+
+    const handleX = () => {
+        const input = document.getElementById('search');
+        const x = document.getElementById('x');
+
+        input.value = '';
+        setGetInput('');
+        x.classList.add('hidden');
+    }
+
     const openMenu = () => {
         const aside = document.getElementById('menu');
         const div = document.getElementById('divDetras');
@@ -94,13 +124,6 @@ const Header = () => {
         aside?.classList.add('hiddenn');
         div?.classList.remove('visiblee');
         div?.classList.add('hiddenn');
-    };
-
-
-    const nameSidebar = (name) => {
-        const input = document.getElementById('search')
-        input.value = name;
-        closeMenu();
     };
 
     useEffect(() => {
@@ -143,7 +166,6 @@ const Header = () => {
 
     const stars = screenSize === 'small' ? starsSmall : screenSize === 'large' ? starsLarge : starsMedium;
 
-
     return (
         <header id='header' className='fixed w-full h-[93px] lg:h-[120px] md:px-16 lg:px-52 bg-[#EEAED3] flex items-center justify-between z-50 px-1 transition-all duration-[400ms]'>
             {stars.map((star, index) => (
@@ -157,13 +179,15 @@ const Header = () => {
             <img className='absolute w-36 md:w-44 lg:w-60 left-28 md:left-44 lg:left-96 top-2' src="/images/nube.webp" alt="nube"/>
             <img className='absolute w-36 md:w-52 lg:w-72 right-[-30px] md:right-12 lg:right-72 top-[68px] md:top-[57px]' src="/images/nube2.webp" alt="nube"/>
             <div className="relative">
+                <Search className="absolute left-2 top-[5px] lg:size-10" style={{strokeWidth:3}} />
                 <input
                     id="search"
                     type="search"
-                    className="w-[180px] md:w-[270px] lg:w-[420px] h-[40px] lg:h-[50px] rounded-full pe-2 ps-11 md:ps-16 font-island text-[#EEAED3] text-4xl md:text-5xl placeholder:text-[#EEAED3] focus:outline-none appearance-none"
+                    className="w-[180px] md:w-[270px] lg:w-[420px] h-[40px] lg:h-[50px] rounded-full ps-11 md:ps-12 lg:ps-16 pe-[35px] md:pe-11 font-island text-[#EEAED3] text-4xl md:text-5xl placeholder:text-[#EEAED3] focus:outline-none appearance-none"
                     placeholder="Buscar..."
+                    onChange={(e) => setGetInput(e.target.value.toLowerCase().trim())}
                 />
-                <Search className="absolute left-2 top-[5px] lg:size-10" style={{strokeWidth:3}} />
+                <X id='x' onClick={handleX} className='absolute top-2 md:top-[6px] lg:top-[7px] right-[6px] stroke-[#EEAED3] size-6 md:size-7 lg:size-9 cursor-pointer'/>
             </div>
 
             <div className='hidden lg:block absolute right-52 w-20 h-16 cursor-pointer' onClick={openMenu}> </div>
@@ -176,18 +200,18 @@ const Header = () => {
                         
                         <div className="flex">
                             <h1 className="relative top-3 text-5xl lg:text-8xl lg:ps-3 lg:pe-8 lg:mb-5">Productos</h1>
-                            <X id="x" className="relative left-2 lg:left-0 mt-[10px] lg:mt-6 mb-5 ms-auto size-12 lg:size-16 cursor-pointer" style={{strokeWidth:3}} onClick={closeMenu} />
+                            <X id="x" className="relative left-2 lg:left-0 mt-[10px] lg:mt-6 mb-5 ms-auto size-12 lg:size-16 cursor-pointer hover:rotate-180 transition-all duration-300" style={{strokeWidth:3}} onClick={closeMenu} />
                         </div>
                         
-                        <li onClick={() => nameSidebar('rubor')}>Rubores</li>
-                        <li onClick={() => nameSidebar('polvo')}>Polvos</li>
-                        <li onClick={() => nameSidebar('base')}>Bases</li>
-                        <li onClick={() => nameSidebar('corrector')}>Correctores</li>
-                        <li onClick={() => nameSidebar('gel')}>Gel</li>
-                        <li onClick={() => nameSidebar('lápiz')}>Lápices</li>
-                        <li onClick={() => nameSidebar('kit')}>Kits</li>
-                        <li onClick={() => nameSidebar('fijador')}>Fijadores</li>
-                        <li onClick={() => nameSidebar('serum')}>Serum</li>
+                        <li onClick={() => handleCategoryClick('Rubor')}>Rubores</li>
+                        <li onClick={() => handleCategoryClick('Polvo')}>Polvos</li>
+                        <li onClick={() => handleCategoryClick('Base')}>Bases</li>
+                        <li onClick={() => handleCategoryClick('Corrector')}>Correctores</li>
+                        <li onClick={() => handleCategoryClick('Gel')}>Gel</li>
+                        <li onClick={() => handleCategoryClick('Lapiz')}>Lápices</li>
+                        <li onClick={() => handleCategoryClick('Kit')}>Kits</li>
+                        <li onClick={() => handleCategoryClick('Fijador')}>Fijadores</li>
+                        <li onClick={() => handleCategoryClick('Serum')}>Serum</li>
 
                         <div className='absolute right-0 bottom-0 md:top-0 flex md:flex-col justify-center items-start md:items-center gap-3 md:gap-10 lg:gap-16 w-full md:w-14 lg:w-52 h-44 md:h-full p-2 md:p-5 bg-[#9b005a4a] '>
                             <a className='size-10' href="/"><Face className='w-8 md:w-9 lg:w-[36px] m-auto'style={{strokeWidth:2}}/></a>
@@ -203,6 +227,6 @@ const Header = () => {
             </aside>
         </header>
     );
-}
+};
 
 export default Header;

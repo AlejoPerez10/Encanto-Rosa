@@ -168,7 +168,7 @@ const Header = () => {
     const stars = screenSize === 'small' ? starsSmall : screenSize === 'large' ? starsLarge : starsMedium;
 
     return (
-        <header id='header' className='fixed w-full h-[93px] lg:h-[120px] md:px-16 lg:px-52 bg-[#EEAED3] flex items-center justify-between z-50 px-1 transition-all duration-[400ms]'>
+        <header id='header' className='fixed top-0 w-full h-[93px] lg:h-[120px] md:px-16 lg:px-52 bg-[#EEAED3] flex items-center justify-between z-50 px-1 transition-all duration-[400ms]'>
             {stars.map((star, index) => (
                 <Star
                     key={index}

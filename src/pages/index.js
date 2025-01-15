@@ -1,16 +1,15 @@
-import { useState, React, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Cards from "@/components/Cards";
 import Left from '@/assets/icons/left.svg';
 import Right from '@/assets/icons/right.svg';
 import { products } from "@/data/productos";
-import { SearchProvider, useSearch } from '@/context/SearchContext';
+import { SearchContext } from '@/context/SearchContext';
 
 const itemsPerPage = 6;
 
 export default function Home() {
-  const { getInput } = useSearch();
+  const { getInput, currentPage, setCurrentPage } = useContext(SearchContext);
   const [filterProducts, setFilterProducts] = useState(products);
-  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const input = document.getElementById('search');
@@ -21,15 +20,6 @@ export default function Home() {
 
     setFilterProducts(products.filter(product => product.name.toLowerCase().trim().includes(getInput)));
   }, [getInput]);
-
-  /*useEffect(() => {
-    // Filtra los productos al cambiar 'getInput'
-    setFilterProducts(
-      products.filter(product =>
-        product.name.toLowerCase().includes(getInput.toLowerCase().trim())
-      )
-    );
-  }, [getInput]);*/
 
   const getCurrentProducts = () => {
     const indexOfLastProduct = currentPage * itemsPerPage;
@@ -43,10 +33,6 @@ export default function Home() {
 
   const totalPages = () => {
     return Math.ceil(filterProducts.length / itemsPerPage);
-  }
-
-  const filterByCategory = (category) => {
-    setFilterProducts(products.filter(product => product.name.toLowerCase().trim().includes(category)))
   }
 
   return (

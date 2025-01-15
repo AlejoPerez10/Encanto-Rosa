@@ -6,15 +6,17 @@ import Star from "@/assets/icons/star.svg";
 const starsSmall = [
     { top: '11px', left: '12px' },
     { top: '4px', left: '128px' },
-    { top: '20px', left: '185px' },
+    { top: '15px', left: '185px' },
+    { top: '30px', left: '220px' },
     { top: '89px', left: '4px' },
     { top: '80px', left: '65px' },
     { top: '70px', left: '100px' },
     { top: '85px', left: '140px' },
-    { top: '16px', right: '5px' },
-    { top: '12px', right: '80px' },
-    { top: '58px', right: '40px' },
-    { top: '75px', right: '128px' },
+    { top: '7px', right: '5px' },
+    { top: '12px', right: '76px' },
+    { top: '55px', right: '20px' },
+    { top: '65px', right: '115px' },
+    { top: '75px', right: '170px' },
 ];
 
 const starsMedium = [

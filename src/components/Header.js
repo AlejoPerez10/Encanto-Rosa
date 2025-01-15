@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Search from '@/assets/icons/search.svg'
 import Menu from '@/assets/icons/menu.svg'
 import X from '@/assets/icons/x.svg'
@@ -7,7 +7,7 @@ import Wpp from '@/assets/icons/wpp.svg'
 import Face from '@/assets/icons/face.svg'
 import Tik from '@/assets/icons/tik.svg'
 import Star from '@/assets/icons/star.svg'
-import { useSearch } from '@/context/SearchContext'
+import { SearchContext } from '@/context/SearchContext'
 
 const starsSmall = [
     { top: '12px', left: '8px' },
@@ -78,12 +78,13 @@ const starsLarge = [
 
 const Header = () => {
 
-    const { setGetInput, getInput } = useSearch();
+    const { getInput, setGetInput, setCurrentPage } = useContext(SearchContext);
 
     const handleCategoryClick = (category) => {
         const input = document.getElementById('search');
         input.value = category;
-        setGetInput(category.toLowerCase().trim()); // Actualiza el estado global
+        setGetInput(category.toLowerCase().trim());
+        setCurrentPage(1);
         closeMenu();
     };
 
@@ -91,10 +92,10 @@ const Header = () => {
         const input = document.getElementById('search');
         const x = document.getElementById('x');
         
-        if(input.value === ''){
-            x.classList.add('hidden')
-        } else {
+        if(input.value !== ''){
             x.classList.remove('hidden')
+        } else {
+            x.classList.add('hidden')
         }
     },[getInput])
 
@@ -187,7 +188,7 @@ const Header = () => {
                     placeholder="Buscar..."
                     onChange={(e) => setGetInput(e.target.value.toLowerCase().trim())}
                 />
-                <X id='x' onClick={handleX} className='absolute top-2 md:top-[6px] lg:top-[7px] right-[6px] stroke-[#EEAED3] size-6 md:size-7 lg:size-9 cursor-pointer'/>
+                <X id='x' onClick={handleX} className='hidden absolute top-2 md:top-[6px] lg:top-[7px] right-[6px] stroke-[#EEAED3] size-6 md:size-7 lg:size-9 cursor-pointer'/>
             </div>
 
             <div className='hidden lg:block absolute right-52 w-20 h-16 cursor-pointer' onClick={openMenu}> </div>

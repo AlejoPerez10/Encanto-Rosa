@@ -1,18 +1,16 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState } from 'react';
 
 // Crear el contexto
-const SearchContext = createContext();
+export const SearchContext = createContext();
 
 // Proveedor del contexto
 export const SearchProvider = ({ children }) => {
     const [getInput, setGetInput] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
 
     return (
-        <SearchContext.Provider value={{ getInput, setGetInput }}>
+        <SearchContext.Provider value={{ getInput, setGetInput, currentPage, setCurrentPage }}>
             {children}
         </SearchContext.Provider>
     );
 };
-
-// Custom hook para usar el contexto
-export const useSearch = () => useContext(SearchContext);

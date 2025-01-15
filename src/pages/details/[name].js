@@ -30,7 +30,7 @@ const Details = () => {
                 </figure>
                 <aside className="flex flex-col w-full">
                     <h3 className="font-island text-3xl lg:text-6xl mx-auto font-bold -mt-4 lg:mt-0 mb-3 lg:mb-6">{product?.price}</h3>
-                    <a href='https://wa.me/3103893622' className="w-full lg:w-[50%] m-auto h-[40px] lg:h-[60px] bg-[#EEAED3] mb-2 lg:mb-8 rounded-full font-island font-bold text-3xl lg:text-6xl text-[#9b005b] flex justify-center items-center shadow-[-2px_4px_15px_black]">¡ LO QUIERO !</a>
+                    <a href='https://wa.me/3103893622' className="w-full md:w-[70%] lg:w-auto lg:px-20 m-auto h-[40px] lg:h-[60px] bg-[#EEAED3] mb-2 lg:mb-8 rounded-full font-island font-bold text-3xl lg:text-6xl text-[#9b005b] flex justify-center items-center shadow-[-2px_4px_15px_black]">¡ LO QUIERO !</a>
                     <p className="relative w-full lg:w-[80%] m-auto text-wrap font-playfair leading-4 mt-5 text-lg lg:text-3xl">{product?.description}</p>
                 </aside>
             </section>

@@ -81,3 +81,18 @@ main{
       radial-gradient(circle at 10% 30%, #EEAED3 0.1%, transparent 30%), 
       radial-gradient(circle at 90% 85%, #EEAED3 0.1%, transparent 30%);
 }
+
+@media (width >= 1200px){
+  .mainXl{
+    padding:0 14% !important;
+  }
+  
+  .imgXl{
+    max-width: 500px !important;
+  }
+
+  .loQuieroXl{
+    text-wrap: nowrap;
+  }
+}
+

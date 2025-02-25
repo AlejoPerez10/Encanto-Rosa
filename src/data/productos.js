@@ -127,7 +127,7 @@ export const products = [
         reference: 'Kit de Cejas Ani-K',
         alias: 'El kit de cejas de tu vida',
         description: 'Perfecto para darle mejor definición a tus cejas, su textura es suave y tiene una excelente pigmentación. Su calidad garantiza la duración hasta por 24 horas.',
-        check1: 'Incluye gel, sombra, espejo y pincel',
+        check1: 'Incluye gel, sombra, espejo y pincel.',
         check2: 'Textura ligera y Suave con la piel: Fórmula micropulverizada y ligera que se funde con la piel para lograr un acabado natural.'
     },
     {
